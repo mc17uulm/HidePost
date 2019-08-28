@@ -1,0 +1,18 @@
+{
+    "name": "mc17uulm/hide-post",
+    "description": "Hide Posts by simply setting a checkbox in the post edit site",
+    "type": "wordpress-plugin",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "mc17uulm",
+            "email": "marco.combosch@uni-ulm.de"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "HidePost\\": "./src/"
+        }
+    }
+}
