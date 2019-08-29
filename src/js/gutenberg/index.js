@@ -1,13 +1,20 @@
-import { registerPlugin } from "@wordpress/plugins";
-import { PluginSidebar } from "@wordpress/edit-post";
+const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
+const { __ } = wp.i18n;
+
 
 registerPlugin('hide-post-sidebar', {
     icon: 'smiley',
     render: () => {
         return (
-            <PluginSidebar title={'Hide Post'}>
-                Some Content
-            </PluginSidebar>
+            <>
+                <PluginSidebarMoreMenuItem target="hide-post-sidebar">
+                    HidePost
+                </PluginSidebarMoreMenuItem>
+                <PluginSidebar name="hide-post-sidebar" title={'Hide Post'}>
+                    Some Content
+                </PluginSidebar>
+            </>
         );
     }
 });
