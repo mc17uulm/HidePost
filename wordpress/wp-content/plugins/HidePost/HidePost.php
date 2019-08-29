@@ -35,7 +35,7 @@ add_action('pre_get_posts', function($query) {
 		plugins_url('dist/hp_gutenberg.js', __FILE__),
 		array('wp-plugins', 'wp-edit-post', 'wp-i18n', 'wp-element')
 	);
-});
+});*/
 
 add_action('add_meta_boxes', function() {
 	add_meta_box(
@@ -44,9 +44,10 @@ add_action('add_meta_boxes', function() {
 		'hide_post_metabox_render',
 		'post',
 		'normal',
-		'default'
+		'default',
+        array('__back_compat_meta_box' => true)
 	);
-});*/
+});
 
 function hide_post_metabox_render($post) {
     $is_active_front_page = get_post_meta($post->ID, '_hide_post_checkbox_front_page', true);
