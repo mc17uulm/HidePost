@@ -2,6 +2,8 @@ const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 const { __ } = wp.i18n;
 
+const meta = wp.data.select('core/editor').getEditedPostAttribute('meta');
+console.log(meta);
 
 registerPlugin('hide-post-sidebar', {
     icon: 'smiley',
