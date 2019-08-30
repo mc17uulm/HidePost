@@ -8,7 +8,7 @@ The HidePost WordPress Plugin allows you to hide specific posts on your front an
 
 ### From the WordPress Plugin Directory
 
-The official HidePost WordPress Plugin can be found here:
+The official HidePost WordPress Plugin can be found here: [https://wordpress.org/plugins/hidepostwp/](https://wordpress.org/plugins/hidepostwp/)
 
 ### From GitHub
 

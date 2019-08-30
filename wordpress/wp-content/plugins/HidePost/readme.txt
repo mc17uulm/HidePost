@@ -1,4 +1,4 @@
-=== HidePost ===
+=== HidePostWP ===
 Contributors: mc17uulm
 Tags:  post, hide, site
 Requires at least: 4.4.1
@@ -10,7 +10,7 @@ License URI: https://github.com/mc17uulm/HidePost/blob/master/LICENSE
 The HidePost WordPress Plugin allows you to hide specific posts on your front and home page.
 
 == Description == 
-# HidePost WordPress Plugin
+## HidePost WordPress Plugin
 Version 0.1
 
 The HidePost WordPress Plugin allows you to hide specific posts on your front and home page. The posts will stay visible in the category and archive pages.
@@ -21,7 +21,7 @@ The HidePost WordPress Plugin allows you to hide specific posts on your front an
 
 ### From the WordPress Plugin Directory
 
-The official HidePost WordPress Plugin can be found here:
+The official HidePost WordPress Plugin can be found here: [https://wordpress.org/plugins/hidepostwp/](https://wordpress.org/plugins/hidepostwp/)
 
 ### From GitHub
 
@@ -36,8 +36,6 @@ After activating the HidePost WordPres Plugin you will find a new metabox in you
 1. Download zip and upload via wordpress installer, or search in plugins menu for "HidePost" and install plugin
 2. Activate plugin
 3. After activating the HidePost WordPres Plugin you will find a new metabox in your post editor. With a simple click on `Hide Post on front page` and saving your post, you can now select single posts to be hidden on your front and home page.
-
-== Screenshots ==
 
 == Changelog ==
 = 0.1 =

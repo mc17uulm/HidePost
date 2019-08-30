@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: HidePost
+ * Plugin Name: HidePostWP
  * Description: The HidePost WordPress Plugin allows you to hide specific posts on your front and home page.
  * Author: mc17uulm
  * Author URI: https://github.com/mc17uulm/
