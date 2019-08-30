@@ -1,6 +1,7 @@
 .idea/
 node_modules/
 .vscode/
+build/
 wordpress/*
 !wordpress/wp-content/
 wordpress/wp-content/*
@@ -8,6 +9,5 @@ wordpress/wp-content/*
 wordpress/wp-content/plugins/*
 !wordpress/wp-content/plugins/HidePost/
 wordpress/wp-content/plugins/HidePost/*
-!wordpress/wp-content/plugins/HidePost/src/
-!wordpress/wp-content/plugins/HidePost/composer.json
+!wordpress/wp-content/plugins/HidePost/readme.txt
 !wordpress/wp-content/plugins/HidePost/HidePost.php

@@ -2,12 +2,14 @@
 
 /**
  * Plugin Name: HidePost
- * Description: Hide Posts by simply setting a checkbox in the post edit site
+ * Description: The HidePost WordPress Plugin allows you to hide specific posts on your front and home page.
  * Author: mc17uulm
  * Author URI: https://github.com/mc17uulm/
  * Version: 0.1
- * License: GPLv3
- * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+ * Text Domain: hp_lang
+ * Domain Path: /lang
+ * License: MIT
+ * License URI: https://github.com/mc17uulm/HidePost/blob/master/LICENSE
  * Tags: post, hide, site
  *
  * === Plugin Information ===
@@ -15,27 +17,34 @@
  * Version: 0.1
  * Date: 28.08.2019
  *
+ * If there are problems, bugs or errors, please report on GitHub: https://github.com/mc17uulm/HidePost
+ *
  */
 
 if(!defined('ABSPATH')) {
     exit;
 }
 
-require_once __DIR__ . "/vendor/autoload.php";
-
-use HidePost\ProtectionHandler;
-
 add_action('pre_get_posts', function($query) {
-   ProtectionHandler::run($query);
+    global $wpdb;
+
+    $rules = $wpdb->get_results("SELECT post_id FROM {$wpdb->prefix}postmeta WHERE meta_key = '_hide_post_checkbox_front_page' AND meta_value = 'true'");
+    if(count($rules) > 0) {
+        if($query->is_front_page() || $query->is_home()) {
+            $query->set('post__not_in', array_map(function($el) {
+                return intval($el->post_id);
+            }, $rules));
+        }
+    }
 });
 
-add_action('enqueue_block_editor_assets', function() {
+/*add_action('enqueue_block_editor_assets', function() {
 	wp_enqueue_script(
 		'hide-post-gutenberg',
 		plugins_url('dist/hp_gutenberg.js', __FILE__),
 		array('wp-plugins', 'wp-edit-post', 'wp-i18n', 'wp-element')
 	);
-});
+});*/
 
 add_action('add_meta_boxes', function() {
 	add_meta_box(
@@ -48,7 +57,7 @@ add_action('add_meta_boxes', function() {
             <p>
                 <label>
                     <input type="checkbox" name="hide_post_checkbox_front_page" value="true" <?= esc_attr($is_active_front_page) === "true" ? "checked='checked'" : ""; ?>>
-                    Hide on front page
+                    <?= __('Hide on front page', 'hp_lang'); ?>
                 </label>
             </p>
             <?php
@@ -76,14 +85,14 @@ add_action('save_post', function($post_id, $post) {
 }, 10, 2);
 
 add_action('init', function() {
-   register_meta('post', "_hide_post_checkbox_front_page", array(
-      "show_in_rest" => true,
-      "type" => "string",
-      "single" => "true",
-       "sanitize_callback" => "sanitize_text_field",
-       "auth_callback" => function() {
-          return current_user_can('edit_posts');
-       }
+    register_meta('post', "_hide_post_checkbox_front_page", array(
+        "show_in_rest" => true,
+        "type" => "string",
+        "single" => "true",
+        "sanitize_callback" => "sanitize_text_field",
+        "auth_callback" => function() {
+            return current_user_can('edit_posts');
+        }
    ));
 });
 
