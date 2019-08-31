@@ -9,5 +9,6 @@ wordpress/wp-content/*
 wordpress/wp-content/plugins/*
 !wordpress/wp-content/plugins/HidePost/
 wordpress/wp-content/plugins/HidePost/*
+!wordpress/wp-content/plugins/HidePost/lang/
 !wordpress/wp-content/plugins/HidePost/readme.txt
 !wordpress/wp-content/plugins/HidePost/HidePost.php

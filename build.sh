@@ -18,7 +18,6 @@ cp -a "$plugin_dir/." "$project_dir/"
 
 echo "REMOVE unnessecary files"
 rm -rf "$project_dir/.idea/"
-rm -rf "$project_dir/lang/"
 rm -rf "$project_dir/dist/"
 
 echo "UPDATE svn"

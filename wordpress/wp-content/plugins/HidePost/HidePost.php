@@ -5,7 +5,7 @@
  * Description: The HidePost WordPress Plugin allows you to hide specific posts on your front and home page.
  * Author: mc17uulm
  * Author URI: https://github.com/mc17uulm/
- * Version: 0.1
+ * Version: 0.1.1
  * Text Domain: hp_lang
  * Domain Path: /lang
  * License: MIT
@@ -14,8 +14,8 @@
  *
  * === Plugin Information ===
  *
- * Version: 0.1
- * Date: 28.08.2019
+ * Version: 0.1.1
+ * Date: 31.08.2019
  *
  * If there are problems, bugs or errors, please report on GitHub: https://github.com/mc17uulm/HidePost
  *
@@ -94,5 +94,9 @@ add_action('init', function() {
             return current_user_can('edit_posts');
         }
    ));
+});
+
+add_action('plugins_loaded', function() {
+   load_plugin_textdomain('hp_lang', FALSE, basename(dirname(__FILE__)) . '/lang/');
 });
 
