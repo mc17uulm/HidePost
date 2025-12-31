@@ -27,7 +27,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
-    "@wordpress/scripts": "^3.4.0",
+    "@wordpress/scripts": "^31.2.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "source-map-loader": "^0.2.4",
